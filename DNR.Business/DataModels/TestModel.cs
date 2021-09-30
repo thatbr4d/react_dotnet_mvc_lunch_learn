@@ -2,7 +2,7 @@ using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace business
+namespace DNR.Business.DataModels
 {
     [Table("Test")]
     public class TestModel
