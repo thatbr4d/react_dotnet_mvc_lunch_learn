@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "reactjsnet", "reactjsnet\reactjsnet.csproj", "{F1E62025-3FA5-4184-A3D5-DD87DF8E295C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DNR.Reactjsnet", "DNR.Reactjsnet\DNR.Reactjsnet.csproj", "{F1E62025-3FA5-4184-A3D5-DD87DF8E295C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "data", "data\data.csproj", "{6D831788-3A49-45A6-B010-9AF468E5432F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DNR.Data", "DNR.Data\DNR.Data.csproj", "{6D831788-3A49-45A6-B010-9AF468E5432F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DNR.Business", "DNR.Business\DNR.Business.csproj", "{1B8EDF7E-CD7E-4EBB-A6F3-178B6C793C49}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -44,5 +46,17 @@ Global
 		{6D831788-3A49-45A6-B010-9AF468E5432F}.Release|x64.Build.0 = Release|Any CPU
 		{6D831788-3A49-45A6-B010-9AF468E5432F}.Release|x86.ActiveCfg = Release|Any CPU
 		{6D831788-3A49-45A6-B010-9AF468E5432F}.Release|x86.Build.0 = Release|Any CPU
+		{1B8EDF7E-CD7E-4EBB-A6F3-178B6C793C49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B8EDF7E-CD7E-4EBB-A6F3-178B6C793C49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B8EDF7E-CD7E-4EBB-A6F3-178B6C793C49}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{1B8EDF7E-CD7E-4EBB-A6F3-178B6C793C49}.Debug|x64.Build.0 = Debug|Any CPU
+		{1B8EDF7E-CD7E-4EBB-A6F3-178B6C793C49}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{1B8EDF7E-CD7E-4EBB-A6F3-178B6C793C49}.Debug|x86.Build.0 = Debug|Any CPU
+		{1B8EDF7E-CD7E-4EBB-A6F3-178B6C793C49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B8EDF7E-CD7E-4EBB-A6F3-178B6C793C49}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B8EDF7E-CD7E-4EBB-A6F3-178B6C793C49}.Release|x64.ActiveCfg = Release|Any CPU
+		{1B8EDF7E-CD7E-4EBB-A6F3-178B6C793C49}.Release|x64.Build.0 = Release|Any CPU
+		{1B8EDF7E-CD7E-4EBB-A6F3-178B6C793C49}.Release|x86.ActiveCfg = Release|Any CPU
+		{1B8EDF7E-CD7E-4EBB-A6F3-178B6C793C49}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
