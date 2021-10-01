@@ -1,6 +1,5 @@
-﻿using System;
-using System.IO;
-using DNR.Business.DataModels;
+﻿using System.IO;
+using DNR.Data.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.Extensions.Configuration;
