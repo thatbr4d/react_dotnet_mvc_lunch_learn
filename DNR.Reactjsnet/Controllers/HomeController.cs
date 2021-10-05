@@ -15,12 +15,12 @@ namespace reactjsnet.Controllers
                               ISimpleTestService testService)
         {
             _logger = logger;
-            _testService = testService;
+            //_testService = testService;
         }
 
         public IActionResult Index()
         {
-            _testService.GetTestModel();
+            //_testService.GetTestModel();
             return View();
         }
 
