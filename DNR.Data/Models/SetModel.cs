@@ -4,15 +4,18 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DNR.Data.Models
 {
-    [Table("Test")]
-    public class TestModel
+    [Table("Sets")]
+    public class SetModel
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid Id { get; set; }
 
-        public string TestValueOne { get; set; }
-
-        public string TestValueTwo { get; set; }
+        [Required]
+        public string Reps{get;set;}
+    
+        [ForeignKey("ExerciseId")]
+        public Guid ExerciseId{get;set;}
+        public virtual ExerciseModel Exercise{get;set;}
 
     }
 }

@@ -10,7 +10,9 @@ namespace DNR.Data
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
 
-        public virtual DbSet<TestModel> Tests { get; set; }
+        public virtual DbSet<WorkoutModel> Workouts { get; set; }
+        public virtual DbSet<ExerciseModel> Exercises { get; set; }
+        public virtual DbSet<SetModel> Sets { get; set; }
     }
 
     public class DesignTimeDbContextFactory : IDesignTimeDbContextFactory<ApplicationDbContext>

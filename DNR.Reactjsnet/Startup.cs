@@ -31,9 +31,9 @@ namespace reactjsnet
             services.AddReact();
             services.AddJsEngineSwitcher(options => options.DefaultEngineName = V8JsEngine.EngineName).AddV8();
 
-            services.AddControllersWithViews();
+            services.AddControllersWithViews().AddRazorRuntimeCompilation();
             services.AddDbContext<ApplicationDbContext>(options => options.UseNpgsql(Configuration.GetConnectionString("DatabaseConnection")));
-            services.AddScoped<ISimpleTestService, SimpleTestService>();
+            services.AddScoped<IWorkoutService, WorkoutService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -69,6 +69,7 @@ namespace reactjsnet
                 //config
                 //  .SetLoadBabel(false)
                 //  .AddScriptWithoutTransform("~/js/bundle.server.js");
+                //config.AddScript("~/js/React/Workout.jsx");
             });
 
             app.UseStaticFiles();

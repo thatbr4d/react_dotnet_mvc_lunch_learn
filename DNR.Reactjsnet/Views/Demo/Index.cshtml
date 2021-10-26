@@ -1,0 +1,39 @@
+@model reactjsnet.Models.DemoViewModel
+@{
+    ViewData["Title"] = "Demo";
+}
+
+<div>
+    <h1 class="display-4">Demo</h1>
+
+    <form asp-controller="Demo" asp-action="Index" method="post">
+        <div class="form-group">
+            <label asp-for="WorkoutName">Name</label>
+            <input asp-for="WorkoutName" class="form-control" />
+            <div>@Html.ValidationMessageFor(m => m.WorkoutName)</div>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Date">Date</label>
+            <input asp-for="Date" class="form-control" />
+            <div>@Html.ValidationMessageFor(m => m.Date)</div>
+        </div>
+
+        <div id="ReactContent"></div>
+
+        @* Mention React Helper *@
+        @* @Html.React("Workout", new {exercises = Model.Exercises}) *@
+        
+        <input type="submit" class="btn btn-primary" value="Save" />
+    </form>
+
+
+</div>
+@section Scripts
+{
+<script type="text/javascript">
+    let exercisesModel = '@Json.Serialize(Model.Exercises)';
+    let modelStateErrors = '@Json.Serialize(ViewData.ModelState.Where(n => n.Value.Errors.Count > 0).Select(x => new{x.Key, x.Value.Errors}).ToList())';
+</script>
+<script src="@Url.Content("~/js/React/Workout.jsx")"></script>
+}
