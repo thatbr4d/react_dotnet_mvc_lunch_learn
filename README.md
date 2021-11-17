@@ -17,8 +17,8 @@
 
 ## \DNR.Reactjsnet\ - MVC project demo using Reactjs.net nuget package
 
-## * TODO - MVC project demo using a standalone react project compiled to js *
+## \DNR.ReactStandalone\ - MVC project demo using a standalone react project compiled to js
 
-## * TODO - MVC project demo manually incorperating react into the project *
+## \DNR.ReactIntegrated\ - MVC project demo manually integrating react into the project
 
-## * TODO - Sample project using dotnet react template *
+## \DNR.MSReactTemplate\ - Sample project using dotnet react template
