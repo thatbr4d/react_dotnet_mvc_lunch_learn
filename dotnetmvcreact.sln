@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DNR.ReactStandalone", "DNR.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DNR.ReactIntegrated", "DNR.ReactIntegrated\DNR.ReactIntegrated.csproj", "{F82009D7-6F36-44C3-BE69-FAA3C5668D1D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DNR.MSReactTemplate", "DNR.MSReactTemplate\DNR.MSReactTemplate.csproj", "{6AD63958-99F9-4BB8-AD48-F7C82F4D6E64}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -86,5 +88,17 @@ Global
 		{F82009D7-6F36-44C3-BE69-FAA3C5668D1D}.Release|x64.Build.0 = Release|Any CPU
 		{F82009D7-6F36-44C3-BE69-FAA3C5668D1D}.Release|x86.ActiveCfg = Release|Any CPU
 		{F82009D7-6F36-44C3-BE69-FAA3C5668D1D}.Release|x86.Build.0 = Release|Any CPU
+		{6AD63958-99F9-4BB8-AD48-F7C82F4D6E64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6AD63958-99F9-4BB8-AD48-F7C82F4D6E64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6AD63958-99F9-4BB8-AD48-F7C82F4D6E64}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{6AD63958-99F9-4BB8-AD48-F7C82F4D6E64}.Debug|x64.Build.0 = Debug|Any CPU
+		{6AD63958-99F9-4BB8-AD48-F7C82F4D6E64}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{6AD63958-99F9-4BB8-AD48-F7C82F4D6E64}.Debug|x86.Build.0 = Debug|Any CPU
+		{6AD63958-99F9-4BB8-AD48-F7C82F4D6E64}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6AD63958-99F9-4BB8-AD48-F7C82F4D6E64}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6AD63958-99F9-4BB8-AD48-F7C82F4D6E64}.Release|x64.ActiveCfg = Release|Any CPU
+		{6AD63958-99F9-4BB8-AD48-F7C82F4D6E64}.Release|x64.Build.0 = Release|Any CPU
+		{6AD63958-99F9-4BB8-AD48-F7C82F4D6E64}.Release|x86.ActiveCfg = Release|Any CPU
+		{6AD63958-99F9-4BB8-AD48-F7C82F4D6E64}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
