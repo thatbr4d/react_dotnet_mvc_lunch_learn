@@ -52,12 +52,14 @@ namespace reactjsnet.Models
             Exercises = new Exercise[workout.Exercises.Count];
             for(int i = 0; i < workout.Exercises.Count; i++)
             {
+                Exercises[i] = new Exercise();
                 var exercise = workout.Exercises[i];
                 Exercises[i].ExerciseName = exercise.Name;
 
                 Exercises[i].Sets = new Set[exercise.Sets.Count];
                 for(int j = 0; j < exercise.Sets.Count; j++)
                 {
+                    Exercises[i].Sets[j] = new Set();
                     Exercises[i].Sets[j].Reps = exercise.Sets[j].Reps;
                 }
             }

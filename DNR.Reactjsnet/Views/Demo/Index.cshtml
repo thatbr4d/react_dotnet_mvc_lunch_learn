@@ -32,5 +32,5 @@
     let exercisesModel = '@Json.Serialize(Model.Exercises)';
     let modelStateErrors = '@Json.Serialize(ViewData.ModelState.Where(n => n.Value.Errors.Count > 0).Select(x => new{x.Key, x.Value.Errors}).ToList())';
 </script>
-<script src="@Url.Content("~/js/React/Workout.jsx")"></script>
+<script type="module" src="@Url.Content("~/js/React/Workout.jsx")"></script>
 }

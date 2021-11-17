@@ -1,3 +1,5 @@
+import {Errors} from  "./ModelErrors.jsx";
+
 let modelErrors = JSON.parse(modelStateErrors);
 let exercises = JSON.parse(exercisesModel);
 
@@ -45,28 +47,12 @@ class Exercise extends React.Component {
             <div className="form-group card" key={i}>
                 <div className="card-header">
                     <label>{exercise.exerciseName}</label>
-                    <button 
-                        type="button" 
-                        className="btn btn-danger ml-2" 
-                        onClick={() => deleteExercise(i)}>Delete Exercise</button>
+                    <button type="button" className="btn btn-danger ml-2" onClick={() => deleteExercise(i)}>Delete Exercise</button>
                 </div>
                 <div className="card-body">
-                    <input 
-                        type="text" 
-                        className="form-control mb-1" 
-                        id={"Exercises["+i+"].ExerciseName"} 
-                        name={"Exercises["+i+"].ExerciseName"} 
-                        value={exercise.exerciseName}
-                        onChange={event => handleChangeInput(i, event)} />
-
-                    <Errors 
-                        modelErrors={modelErrors} 
-                        id={"Exercises["+i+"].ExerciseName"} />
-
-                    <Sets 
-                        exerciseIndex={i} 
-                        sets={exercise.sets} 
-                        className="list-group-item" />
+                    <input type="text" className="form-control mb-1" id={"Exercises["+i+"].ExerciseName"} name={"Exercises["+i+"].ExerciseName"} value={exercise.exerciseName} onChange={event => handleChangeInput(i, event)} />
+                    <Errors modelErrors={modelErrors} id={"Exercises["+i+"].ExerciseName"} />
+                    <Sets exerciseIndex={i} sets={exercise.sets} className="list-group-item" />
                 </div>
             </div>
         );
@@ -74,10 +60,7 @@ class Exercise extends React.Component {
         return (
             <div>
                 {exerciseNodes}
-                <button 
-                    type="button" 
-                    className="btn btn-success mb-2" 
-                    onClick={() => addAnotherExercise()}>Add Another Exercise</button>
+                <button type="button" className="btn btn-success mb-2" onClick={() => addAnotherExercise()}>Add Another Exercise</button>
             </div>
         );
     }
@@ -93,11 +76,11 @@ class Sets extends React.Component {
 
         const addAnotherSet = () => {
             this.setState({
-                sets: [...this.state.sets, {reps: '4'}]
+                sets: [...this.state.sets, {reps: ''}]
             })
         }
 
-        const deleteSet = (index) =>{
+        const deleteSet = (index) => {
             const values = [...this.state.sets]
             values.splice(index, 1)
             this.setState({
@@ -111,20 +94,14 @@ class Sets extends React.Component {
                     <div>Set {i+1} <button type="button" className="btn btn-danger ml-2" onClick={() => deleteSet(i)}>Delete Set</button></div>
                 </div>
                 <div className="card-body">
-                    <Reps 
-                        reps={set.reps} 
-                        index={i} 
-                        exerciseIndex={this.props.exerciseIndex} />
+                    <Reps reps={set.reps} index={i} exerciseIndex={this.props.exerciseIndex} />
                 </div>
             </div>
         );
         return (
             <div>
                 {setNodes}
-                <button 
-                    type="button" 
-                    className="btn btn-success" 
-                    onClick={() => addAnotherSet()}>Add Another Set</button>
+                <button type="button" className="btn btn-success" onClick={() => addAnotherSet()}>Add Another Set</button>
             </div>
         );
     }
@@ -136,9 +113,7 @@ class Reps extends React.Component {
         this.state = {reps: this.props.reps};
     }
 
-    
     render() {
-
         const handleChangeInput = (index, event) => {
             this.setState({
                 reps: event.target.value
@@ -152,42 +127,15 @@ class Reps extends React.Component {
                         <label htmlFor={"Exercises["+this.props.exerciseIndex+"].Sets["+this.props.index+"].Reps"}>Reps</label>
                     </div>
                     <div className="col col-sm-6">
-                        <input 
-                            type="text" 
-                            className="form-control" 
-                            id={"Exercises["+this.props.exerciseIndex+"].Sets["+this.props.index+"].Reps"} 
-                            name={"Exercises["+this.props.exerciseIndex+"].Sets["+this.props.index+"].Reps"} 
-                            value={this.state.reps} 
-                            onChange={event => handleChangeInput(this.props.index, event)} />
+                        <input type="text" className="form-control" id={"Exercises["+this.props.exerciseIndex+"].Sets["+this.props.index+"].Reps"} name={"Exercises["+this.props.exerciseIndex+"].Sets["+this.props.index+"].Reps"} value={this.state.reps} onChange={event => handleChangeInput(this.props.index, event)} />
                     </div>
                 </div>
-                <Errors 
-                    modelErrors={modelErrors} 
-                    id={"Exercises["+this.props.exerciseIndex+"].Sets["+this.props.index+"].Reps"} />
+                <Errors modelErrors={modelErrors} id={"Exercises["+this.props.exerciseIndex+"].Sets["+this.props.index+"].Reps"} />
             </div>
         );
     }
 }
 
-class Errors extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-    render() {
-        return (
-            this.props.modelErrors.map((err, i) =>
-                <div key={i}>
-                    {
-                        err.key == this.props.id ?
-                            <span className="field-validation-error" data-valmsg-for={this.props.id} data-valmsg-replace="true">
-                                {err.errors.map((message, i) => message.errorMessage)}
-                            </span> :
-                            null
-                    }
-                </div>
-            )
-        );
-    }
-}
+
 
 ReactDOM.render(<Workout />, document.getElementById('ReactContent'));

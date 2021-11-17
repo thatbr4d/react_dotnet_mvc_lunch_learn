@@ -2,6 +2,7 @@ using System.Linq;
 using DNR.Business.Services.Interfaces;
 using DNR.Data;
 using DNR.Data.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace DNR.Business.Services
 {
@@ -16,10 +17,10 @@ namespace DNR.Business.Services
 
         public WorkoutModel GetWorkout()
         {
-            _db.Workouts.RemoveRange(_db.Workouts.ToList());
-            _db.SaveChanges();
-
-            return _db.Workouts.FirstOrDefault();
+            return _db.Workouts
+                             .Include(x => x.Exercises)
+                             .ThenInclude(x => x.Sets)
+                             .FirstOrDefault();
         }
 
         public bool SaveWorkout(WorkoutModel model)
@@ -27,8 +28,8 @@ namespace DNR.Business.Services
             // Always delete old records, just for demo purpsoses
             _db.Workouts.RemoveRange(_db.Workouts.ToList());
 
-            //_db.Workouts.Add(model);
-            //_db.SaveChanges();
+            _db.Workouts.Add(model);
+            _db.SaveChanges();
 
             return true;
         }
