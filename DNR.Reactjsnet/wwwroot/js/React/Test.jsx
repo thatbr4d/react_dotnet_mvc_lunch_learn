@@ -5,5 +5,3 @@ class CommentBox extends React.Component {
         );
     }
 }
-
-ReactDOM.render(<CommentBox />, document.getElementById('content'));

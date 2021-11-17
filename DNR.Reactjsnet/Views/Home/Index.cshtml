@@ -8,10 +8,8 @@
 
     <div id="content"></div>
 
-
+        @* Mention React Helper *@
+        @* @Html.React("Workout", new {exercises = Model.Exercises}) *@
+        @Html.React("CommentBox", "")
 
 </div>
-@section Scripts
-{
-<script src="@Url.Content("~/js/React/Test.jsx")"></script>
-}
